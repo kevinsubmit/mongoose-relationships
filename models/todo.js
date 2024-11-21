@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//  embedding
 const subtaskSchema = new mongoose.Schema({
   text: String,
   isComplete: Boolean
