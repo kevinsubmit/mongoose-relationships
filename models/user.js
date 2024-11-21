@@ -1,4 +1,4 @@
-// models/user.js
+// reference引用型需要这个user.js，嵌套型embedding不需要
 
 import mongoose from 'mongoose';
 
