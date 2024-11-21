@@ -100,8 +100,9 @@ const findParentAndRemoveSubtask = async () => {
   console.log("Updated todo:", foundTodo);
 };
 
-//   reference
 
+
+//   reference
 //  create
 const createUser = async () => {
   const userData = {
@@ -113,8 +114,8 @@ const createUser = async () => {
 };
 
 const assignTodo = async () => {
-  const todoId = "673cd614051a2702c5d3b0fb";
-  const userId = "673ce6b48bf4c919ed35519f";
+  const todoId = "673f7878ac7b3381dd783a4a";
+  const userId = "673f7631383d9dacaf5292e6";
 
   const updatedTodo = await Todo.findByIdAndUpdate(
     todoId,
@@ -125,9 +126,18 @@ const assignTodo = async () => {
   console.log("Updated document:", updatedTodo);
 };
 
+
+// populate() method to join our todo and user documents.
+// assignee 字段只会返回 User 的 ObjectId，我们可以使用 populate 来填充这个 assignee 字段，使其返回完整的 User 信息。
+const findTodos = async () => {
+  const todos = await Todo.find({}).populate("assignee");
+  console.log("All todos:", todos);
+};
+
+
 /*------------------------------- Run Queries -------------------------------*/
 
 const runQueries = async () => {
   console.log("Queries running.");
-  await assignTodo();
+  await findTodos();
 };

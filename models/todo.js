@@ -6,6 +6,8 @@ const subtaskSchema = new mongoose.Schema({
   isComplete: Boolean
 })
 
+
+
 const todoSchema = new mongoose.Schema({
   text: String,
   isComplete: Boolean,
