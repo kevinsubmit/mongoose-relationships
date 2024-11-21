@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-//  embedding
+//  embedding需要定义这个subtaskSchema模型，引用reference不需要
 const subtaskSchema = new mongoose.Schema({
   text: String,
   isComplete: Boolean
